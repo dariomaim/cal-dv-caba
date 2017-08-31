@@ -1,72 +1,31 @@
-﻿<!DOCTYPE HTML>
-<!--
-	Identity by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>Identity by HTML5 UP</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<!--[if lte IE 8]><script src="assets/js/html5shiv.js"></script><![endif]-->
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
-		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="fire" onload="onBodyLoad();">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Event KeyCodes</title>
+    <link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+     <link rel="stylesheet" href="./style.css">
+</head>
+<body onload="onBodyLoad();">
+<div class="display">
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+       <div class="wrap" aria-live="polite" aria-atomic="true">
+        <h2 class="love">Calcula el digito verificador</h2>
+        <span class="love">Ultima actualizacion del padrón:</span>
+        <input class="text-display" id="fechaActualizacion" disabled="disabled"/>
+        <button id="actualizarPadron" class="button">Actualizar datos del padrón</button>
+         <input class="text-display" name="name" id="dominio" placeholder="Ingresa la patente" />
+         <button id="idDominio" class="button" >Calcular</button>
+        <input class="keycode-display" id="resultado" />
 
-				<!-- Main -->
-					<section id="main">
-						<header>
-							<span class="avatar"><img src="images/avatar.jpg" alt="" /></span>
-							<h1>Calculadora Digito Verificador</h1>
-							<p>Vehículos radicados en CABA</p>
-						</header>
+    </div>
+</div>
 
-						<hr />
-						<h2>Ingresa tu patente y click en el boton calcular</h2>
-						<ul class="actions">
-							<li><label>Fecha de ultima actualización del padrón</label>
-							<input style="border:none; text-align: center" disabled="disabled" type="date" id="fechaActualizacion" /></li><br/>
-							<li><a id="actualizarPadron" class="button">Actualizar datos del padrón</a></li>
-						</ul>
+<span class="love">
 
-						<div class="field">
+  </span>
 
-								<input type="text" name="name" id="dominio" placeholder="Dominio" />
-						</div>
-						<div class="field">
-								<input type="text" name="email" id="resultado" placeholder="Resultado" />
-						</div>
-							<ul class="actions">
-								<li><a id="idDominio" class="button">Calcular</a></li>
-							</ul>
 
-						<hr />
-
-						<footer>
-							<ul class="icons">
-								<li><a href="#" class="fa-twitter">Twitter</a></li>
-								<li><a href="#" class="fa-instagram">Instagram</a></li>
-								<li><a href="#" class="fa-facebook">Facebook</a></li>
-							</ul>
-						</footer>
-					</section>
-
-				<!-- Footer -->
-					<footer id="footer">
-						<ul class="copyright">
-							<li>&copy; Jane Doe</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-						</ul>
-					</footer>
-
-			</div>
-
-		<script src="assets/js/main-es6.js"></script>
-	</body>
+<script src="./main-es6.js"></script>
+</body>
 </html>

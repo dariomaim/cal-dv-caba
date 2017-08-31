@@ -26,34 +26,8 @@
     };
 
     {
-        let jsonObj = {
-            A: "14",
-            B: "01",
-            C: "00",
-            D: "16",
-            E: "05",
-            F: "20",
-            G: "19",
-            H: "09",
-            I: "24",
-            J: "07",
-            K: "21",
-            L: "08",
-            M: "04",
-            N: "13",
-            O: "25",
-            P: "22",
-            Q: "18",
-            R: "10",
-            S: "02",
-            T: "06",
-            U: "12",
-            V: "23",
-            W: "11",
-            X: "03",
-            Y: "15",
-            Z: "17"
-        };
+        let jsonObj = {A:"14",B:"01",C:"00",D:"16",E:"05",F:"20",G:"19",H:"09",I:"24",J:"07",K:"21",L:"08",M:"04",N:"13",O:"25",P:"22",Q:"18",R:"10",S:"02",T:"06",U:"12",V:"23",W:"11",X:"03",Y:"15",Z:"17"};
+
         let updateDateJson = () => document.getElementById("fechaActualizacion").value =  getTodayDate();
         let getDominio = () => (document.getElementById("dominio").value).toUpperCase();
         let writeDominio = (resultado) => document.getElementById("resultado").value = resultado;
@@ -97,12 +71,14 @@
         procesarDominio = () => {
             "use strict";
             let idDominio = getDominio();
-            validarDominio(idDominio);
-            //let arrayDominio = calcularDv(buscarCadena(idDominio));
-            let digitoPar = buscarParImpar(buscarCadena(idDominio), 0);
-            let digitoImpar = buscarParImpar(buscarCadena(idDominio), 1);
-            let resultado = `${sumarDigitos(digitoPar)}` + `${sumarDigitos(digitoImpar)}`;
-            writeDominio(resultado);
+            if (validarDominio(idDominio) !== false) {
+                //let arrayDominio = calcularDv(buscarCadena(idDominio));
+                let digitoPar = buscarParImpar(buscarCadena(idDominio), 0);
+                let digitoImpar = buscarParImpar(buscarCadena(idDominio), 1);
+                let resultado = `${sumarDigitos(digitoPar)}` + `${sumarDigitos(digitoImpar)}`;
+                writeDominio(resultado);
+            } else
+                writeDominio("El dominio no existe");
         };
 
         /*
@@ -123,7 +99,6 @@
             }
             return dominioNumero;
         };
-
 
         /*
          Esta función fue la primera que hice, después la reemplace con
@@ -200,7 +175,6 @@
             const REGEXDOMINIOMOTO = /^\d{3}[A-Z]{3}$/;
             const REGEXDOMINIO2017 = /^[A-Z]{2}\d{3}[A-Z]{2}$/;
             if (!REGEXDOMINIO2016.test(idDominio) && !REGEXDOMINIO2017.test(idDominio) && !REGEXDOMINIOMOTO.test(idDominio)) {
-                console.log("La patente ingresada es incorrecta");
                 return false
             }
         };
