@@ -107,6 +107,7 @@
 
         /*
         Para tomar el número de patente/dominio y matchearlo con el código de número/letras que hace los calculos
+        Se puede hacer con un filter en vez del for/of por no logré sacarlo
         */
         let buscarCadena = (idDominio) => {
             "use strict";
@@ -114,8 +115,10 @@
             let dominioNumero = [];
             for (let [key, valor] of Object.entries(idDominio)) {
                 if (letraNumero[valor] !== undefined) {
+                    // Devuelve las letras convertidas a numeros
                     dominioNumero = dominioNumero + letraNumero[valor];
                 } else
+                    // Devuelve solo los numeros del dominio sin convertirlos
                     dominioNumero = dominioNumero + idDominio[key];
             }
             return dominioNumero;
