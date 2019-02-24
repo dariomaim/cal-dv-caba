@@ -5,14 +5,14 @@
         const IDDOMINIO = document.getElementById("idDominio");
         IDPADRON.addEventListener("click", getDatosCaba, false);
         IDDOMINIO.addEventListener("click", procesarDominio, false);
-        document.getElementById("fechaActualizacion").value =  getTodayDate(-(Math.floor(Math.random()*2)));
+        document.getElementById("fechaActualizacion").value =  getTodayDate(-(Math.floor(Math.random())));
     }
 
     // Buscar fecha del dia
     getTodayDate = (fechaActualizacion = 1) => {
         let today = new Date();
         let dd = today.getDate();
-        let mm = today.getMonth() + fechaActualizacion; //January is 0!
+        let mm = today.getMonth() + fechaActualizacion; //Enero is 0!
 
         let yyyy = today.getFullYear();
         if (dd < 10) {
@@ -63,7 +63,7 @@
             handleData = (data) => jsonObj = JSON.parse(data);
 
             getDatosCaba = () => {
-                let rUrl = "https://jsonblob.com/api/jsonBlob/9652473f-89c0-11e7-8b46-bb8c59b72b48";
+                let rUrl = "https://jsonblob.com/api/jsonBlob/ea04eb93-3854-11e9-8243-39ff568f05fe";
                 let request = new HttpRequest(rUrl, handleData);
                 request.send();
             };
